@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  aws_key: MyString
+  aws_secret_key: MyString
+  knife_rb: MyText
+
+two:
+  aws_key: MyString
+  aws_secret_key: MyString
+  knife_rb: MyText

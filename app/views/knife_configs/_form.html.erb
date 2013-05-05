@@ -1,0 +1,29 @@
+<%= form_for(@knife_config) do |f| %>
+  <% if @knife_config.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@knife_config.errors.count, "error") %> prohibited this knife_config from being saved:</h2>
+
+      <ul>
+      <% @knife_config.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :aws_key %><br>
+    <%= f.text_field :aws_key %>
+  </div>
+  <div class="field">
+    <%= f.label :aws_secret_key %><br>
+    <%= f.text_field :aws_secret_key %>
+  </div>
+  <div class="field">
+    <%= f.label :knife_rb %><br>
+    <%= f.text_area :knife_rb %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

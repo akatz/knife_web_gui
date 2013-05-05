@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Instance:</strong>
+  <%= @server.instance_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @server.name %>
+</p>
+
+<p>
+  <strong>Public ip:</strong>
+  <%= @server.public_ip %>
+</p>
+
+<p>
+  <strong>Private ip:</strong>
+  <%= @server.private_ip %>
+</p>
+
+<p>
+  <strong>Flavor:</strong>
+  <%= @server.flavor %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @server.image %>
+</p>
+
+<p>
+  <strong>Ssh key name:</strong>
+  <%= @server.ssh_key_name %>
+</p>
+
+<p>
+  <strong>Security groups:</strong>
+  <%= @server.security_groups %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @server.state %>
+</p>
+
+<%= link_to 'Edit', edit_server_path(@server) %> |
+<%= link_to 'Back', servers_path %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Aws key:</strong>
+  <%= @knife_config.aws_key %>
+</p>
+
+<p>
+  <strong>Aws secret key:</strong>
+  <%= @knife_config.aws_secret_key %>
+</p>
+
+<p>
+  <strong>Knife rb:</strong>
+  <%= @knife_config.knife_rb %>
+</p>
+
+<%= link_to 'Edit', edit_knife_config_path(@knife_config) %> |
+<%= link_to 'Back', knife_configs_path %>

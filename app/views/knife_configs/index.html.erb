@@ -1,0 +1,31 @@
+<h1>Listing knife_configs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Aws key</th>
+      <th>Aws secret key</th>
+      <th>Knife rb</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @knife_configs.each do |knife_config| %>
+      <tr>
+        <td><%= knife_config.aws_key %></td>
+        <td><%= knife_config.aws_secret_key %></td>
+        <td><%= knife_config.knife_rb %></td>
+        <td><%= link_to 'Show', knife_config %></td>
+        <td><%= link_to 'Edit', edit_knife_config_path(knife_config) %></td>
+        <td><%= link_to 'Destroy', knife_config, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Knife config', new_knife_config_path %>

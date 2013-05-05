@@ -1,0 +1,43 @@
+<h1>Listing servers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Instance</th>
+      <th>Name</th>
+      <th>Public ip</th>
+      <th>Private ip</th>
+      <th>Flavor</th>
+      <th>Image</th>
+      <th>Ssh key name</th>
+      <th>Security groups</th>
+      <th>State</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @servers.each do |server| %>
+      <tr>
+        <td><%= server.instance_id %></td>
+        <td><%= server.name %></td>
+        <td><%= server.public_ip %></td>
+        <td><%= server.private_ip %></td>
+        <td><%= server.flavor %></td>
+        <td><%= server.image %></td>
+        <td><%= server.ssh_key_name %></td>
+        <td><%= server.security_groups %></td>
+        <td><%= server.state %></td>
+        <td><%= link_to 'Show', server %></td>
+        <td><%= link_to 'Edit', edit_server_path(server) %></td>
+        <td><%= link_to 'Destroy', server, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Server', new_server_path %>

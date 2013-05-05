@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  instance_id: MyString
+  name: MyString
+  public_ip: MyString
+  private_ip: MyString
+  flavor: MyString
+  image: MyString
+  ssh_key_name: MyString
+  security_groups: MyString
+  state: MyString
+
+two:
+  instance_id: MyString
+  name: MyString
+  public_ip: MyString
+  private_ip: MyString
+  flavor: MyString
+  image: MyString
+  ssh_key_name: MyString
+  security_groups: MyString
+  state: MyString
