@@ -1,0 +1,18 @@
+<h1>Servers</h1>
+
+<div class="span3">
+  <div class="well">
+	<button {{action setFilter statuses.running }}>Running</button>
+    <button {{action setFilter statuses.stopped }}>Stopped</button>
+    <button {{action setFilter statuses.all }}>All</button>
+    <ul class="nav nav-list">
+      <li class="nav-header">{{controller.filtered.length}} Servers</li>
+      {{#each controller.filtered}}
+        <li class="nav-header">{{#linkTo "server" this}}{{instanceId}}{{/linkTo}}<span>{{name}}</span></li>
+      {{/each}}
+    </ul>
+  </div>
+</div>
+<div class="span8">
+  {{outlet}}
+</div>

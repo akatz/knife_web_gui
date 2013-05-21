@@ -1,0 +1,9 @@
+{{#if KnifeWebTest.Auth.signedIn }}
+  <ul>
+    {{#each controller }}
+    <li> {{#linkTo users.show this}} {{email}} {{/linkTo}}</li>
+    {{/each}}
+  </ul>
+{{else}}
+  <p>You need to sign in first</p>
+{{/if}}

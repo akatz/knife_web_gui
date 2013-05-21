@@ -1,9 +1,10 @@
 class ServersController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_server, only: [:show, :edit, :update, :destroy]
 
   # GET /servers
   def index
-    @servers = Server.all
+    render json: Server.all
   end
 
   # GET /servers/1
@@ -33,7 +34,10 @@ class ServersController < ApplicationController
   # PATCH/PUT /servers/1
   def update
     if @server.update(server_params)
-      redirect_to @server, notice: 'Server was successfully updated.'
+      respond_to do |format|
+        format.html { redirect_to @server, notice: 'Server was successfully updated.'}
+        format.json { render json: @server, status: :updated }
+      end
     else
       render action: 'edit'
     end
@@ -41,8 +45,14 @@ class ServersController < ApplicationController
 
   # DELETE /servers/1
   def destroy
-    @server.destroy
-    redirect_to servers_url, notice: 'Server was successfully destroyed.'
+    if @server.destroy
+      respond_to do |format|
+        format.html { redirect_to servers_url, notice: 'Server was successfully destroyed.'}
+        format.json { render json: {}, status: :no_content }
+      end
+    else
+      respond_with { render "", status: :not_found}
+    end
   end
 
   private

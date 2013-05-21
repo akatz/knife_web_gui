@@ -8,3 +8,7 @@ KnifeWebTest.Server = DS.Model.extend
   sshKeyName: DS.attr('string')
   securityGroups: DS.attr('string')
   state: DS.attr('string')
+
+  publicIpUrl: (->
+    return 'ssh://' + this.get('publicIp')
+  ).property('publicIp')

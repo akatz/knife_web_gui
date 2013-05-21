@@ -1,0 +1,45 @@
+  {{#if isEditing }}
+  <form {{action update on="submit"}} class="form-horizontal">
+    {{ partial "servers/form_fields"}}
+    <div class="form-actions">
+      {{submitButton "Update"}}
+      <button class="btn" {{action cancel}}>Cancel</button>
+    </div>
+  </form>
+  {{else}}
+
+  <h2>{{instanceId}}</h2>
+  <dl class="dl-horizontal">
+    <dt>instanceId:</dt>
+    <dd>{{instanceId}}</dd>
+    <dt>name</dt>
+    <dd>{{name}}</dd>
+    <dt>public IP</dt>
+    {{#if publicIp}}
+    <dd><a {{bindAttr href="publicIpUrl"}} >{{publicIp}}</a></dd>
+    {{else}}
+    <dd>No IP Address</dd>
+    {{/if}}
+    <dt>Private IP</dt>
+    {{#if privateIp}}
+    <dd>{{privateIp}}</dd>
+    {{else}}
+    <dd>No IP Address</dd>
+    {{/if}}
+    <dt>flavor</dt>
+    <dd>{{flavor}}</dd>
+    <dt>image</dt>
+    <dd>{{image}}</dd>
+    <dt>SSH Key Name</dt>
+    <dd>{{sshKeyName}}</dd>
+    <dt>Security Groups</dt>
+    <dd>{{securityGroups}}</dd>
+    <dt>state</dt>
+    <dd>{{state}}</dd>
+  </dl>
+
+<div class="well well-small">
+  <a class="btn" {{action startEditing}}>Edit</a>
+  <a class="btn btn-danger" {{action destroy this}}>Remove</a>
+</div>
+{{/if}}

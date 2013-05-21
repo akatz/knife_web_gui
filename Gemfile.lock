@@ -33,6 +33,16 @@ GIT
       yajl-ruby (~> 1.1)
 
 GIT
+  remote: git://github.com/plataformatec/devise.git
+  revision: 4e2cdc2d5b812c2df1a60a2510f149c84cae3cf9
+  specs:
+    devise (3.0.0.rc)
+      bcrypt-ruby (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      warden (~> 1.2.1)
+
+GIT
   remote: git://github.com/rails/rails.git
   revision: 338fce0a632e9521d4597dfc42d935aaf5f7c5b7
   specs:
@@ -79,9 +89,12 @@ GEM
     active_model_serializers (0.8.0)
       activemodel (>= 3.0)
     activerecord-deprecated_finders (1.0.2)
+    anjlab-bootstrap-rails (2.3.1.1)
+      railties (>= 3.0)
+      sass (>= 3.2)
     ansi (1.4.3)
     arel (4.0.0)
-    atomic (1.1.8)
+    atomic (1.1.9)
     barber (0.4.2)
       ember-source
       execjs
@@ -96,11 +109,12 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.2)
-    devise (1.5.4)
-      bcrypt-ruby (~> 3.0)
-      orm_adapter (~> 0.0.3)
-      warden (~> 1.1)
     diff-lcs (1.2.4)
+    ember-auth-rails (4.0.1)
+      ember-auth-source
+      rails
+    ember-auth-source (6.0.3)
+      ember-source (>= 0.0.2, != 1.0.0.rc1.2, != 1.0.0.rc1.1, != 1.0.0.rc1.0.0, != 1.0.0.pre4.1)
     ember-data-source (0.0.5)
       ember-source
     ember-rails (0.12.0)
@@ -135,6 +149,12 @@ GEM
     guard-zeus (0.0.1)
       guard
       zeus
+    haml (3.1.7)
+    haml-rails (0.3.5)
+      actionpack (>= 3.1, < 4.1)
+      activesupport (>= 3.1, < 4.1)
+      haml (~> 3.1)
+      railties (>= 3.1, < 4.1)
     handlebars-source (1.0.0.rc3)
     highline (1.6.18)
     hike (1.2.2)
@@ -165,7 +185,7 @@ GEM
     mixlib-config (1.1.2)
     mixlib-log (1.6.0)
     mixlib-shellout (1.1.0)
-    multi_json (1.7.2)
+    multi_json (1.7.3)
     net-scp (1.1.0)
       net-ssh (>= 2.6.5)
     net-ssh (2.6.7)
@@ -183,7 +203,7 @@ GEM
       mixlib-shellout
       systemu
       yajl-ruby
-    orm_adapter (0.0.7)
+    orm_adapter (0.4.0)
     polyglot (0.3.3)
     pry (0.9.12.1)
       coderay (~> 1.0.5)
@@ -259,16 +279,20 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  anjlab-bootstrap-rails (>= 2.1)
   bcrypt-ruby (~> 3.0.0)
   chef!
   coffee-rails
-  devise
+  devise!
+  ember-auth-rails
+  ember-auth-source
   ember-rails
   fog!
   guard-bundler
   guard-rails
   guard-rspec
   guard-zeus
+  haml-rails
   jquery-rails
   knife-ec2
   qunit-rails

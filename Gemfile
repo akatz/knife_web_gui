@@ -14,6 +14,8 @@ gem 'coffee-rails'
 gem 'uglifier', '>= 1.0.3'
 gem 'jquery-rails'
 gem 'ember-rails'
+gem 'anjlab-bootstrap-rails', '>= 2.1', :require => 'bootstrap-rails'
+gem 'haml-rails'
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
@@ -43,7 +45,9 @@ group :development, :test do
   gem 'qunit-rails'
 end
 
-gem 'devise'
-gem 'fog', :github => 'fog/fog'
-gem 'chef', :github => 'opscode/chef'
+gem 'devise', github: 'plataformatec/devise'
+gem 'ember-auth-rails'
+gem 'ember-auth-source'
+gem 'fog', github: 'fog/fog'
+gem 'chef', github: 'opscode/chef'
 gem 'knife-ec2'

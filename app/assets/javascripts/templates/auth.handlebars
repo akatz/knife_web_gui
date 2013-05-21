@@ -1,0 +1,5 @@
+{{#if KnifeWebTest.Auth.signedIn}}
+  {{view KnifeWebTest.AuthSignOutView}}
+{{else}}
+  {{view KnifeWebTest.AuthSignInView}}
+{{/if}}

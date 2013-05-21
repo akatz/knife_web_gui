@@ -1,0 +1,24 @@
+<form class="form-horizontal">
+  <div class="control-group">
+    <label class="control-label" for="email">Email</label>
+    <div class="controls">
+       {{input value=view.email id="email" placeholder="email" required="true"}}
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="password">Password</label>
+    <div class="controls">
+       {{input value=view.password id="password" placeholder="password" required="true" type="password"}}
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="remember">Remember Me</label>
+    <div class="controls">
+      {{input type=checkbox id=remember checked=view.remember}}
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <button class="btn">Sign In</button>
+  </div>
+</form>

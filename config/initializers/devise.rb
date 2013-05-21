@@ -69,7 +69,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
-  # config.pepper = "ef5a11017874e8febc21e8fcc8934f93f6e011cb2e38edeb9747ce832f61304e42e6c098cbf6c66ea359d42487dc64e6da9c4aa9d7144692086c05c4518bde30"
+  # config.pepper = "f48f8b1bc38b9b53b076ceda2a152714c3e854815a546fecd6e142db77bb415e0c53cf18b06ac21be95a9b574331adba28fdcda9980bbfdca900a6d5d2ecc5d5"
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
@@ -77,7 +77,7 @@ Devise.setup do |config|
   # able to access the website for two days without confirming his account,
   # access will be blocked just in the third day. Default is 0.days, meaning
   # the user cannot access the website without confirming his account.
-  # config.confirm_within = 2.days
+  config.confirm_within = nil
 
   # Defines which key will be used when confirming an account
   # config.confirmation_keys = [ :email ]
@@ -91,10 +91,6 @@ Devise.setup do |config|
 
   # If true, extends the user's remember period when remembered via cookie.
   # config.extend_remember_period = false
-
-  # If true, uses the password salt as remember token. This should be turned
-  # to false if you are not using database authenticatable.
-  config.use_salt_as_remember_token = true
 
   # Options to be passed to the created cookie. For instance, you can set
   # :secure => true in order to force SSL only cookies.
@@ -157,7 +153,7 @@ Devise.setup do |config|
 
   # ==> Configuration for :token_authenticatable
   # Defines name of the authentication token params key
-  # config.token_authentication_key = :auth_token
+  config.token_authentication_key = :auth_token
 
   # If true, authentication through token does not store user in session and needs
   # to be supplied on each request. Useful if you are using the token as API token.

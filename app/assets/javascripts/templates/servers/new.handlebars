@@ -1,0 +1,8 @@
+<form {{action save on="submit"}} class="form-horizontal">
+  {{partial "servers/form_fields"}}
+
+	<div class="form-actions">
+    {{submitButton "Update"}}
+    <button class="btn" {{action cancel}}>Cancel</button>
+  </div>
+</form>
