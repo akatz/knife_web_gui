@@ -12,7 +12,13 @@
 #= require ember-auth
 #= require_self
 #= require auth
+#= require twitter/bootstrap/dropdown
 #= require knife_web_test
-window.KnifeWebTest = Ember.Application.create()
+window.KnifeWebTest = Ember.Application.create(
+ ready: ->
+    # setInterval(->
+    #   KnifeWebTest.ServersController.set('model', KnifeWebTest.Server.find())
+    # , 60000)
+)
 
 #= require_tree .

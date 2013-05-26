@@ -6,6 +6,8 @@ window.KnifeWebTest.Auth = Em.Auth.create
   tokenIdKey: 'user_id'
   sessionAdapter: 'cookie'
 
+  userModel: 'KnifeWebTest.User'
+
   modules: ['emberData', 'rememberable']
 
   rememberable:

@@ -1,0 +1,1 @@
+KnifeWebTest.UsersIndexController = Em.ArrayController.extend()

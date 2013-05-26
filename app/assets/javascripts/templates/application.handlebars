@@ -1,8 +1,17 @@
 <div class="navbar navbar-inverse navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container-fluid">
-      <div class="brand">Ember Server</div>
+      <div class="brand">{{#linkTo "index"}}Ember Server{{/linkTo}}</div>
       {{#if KnifeWebTest.Auth.signedIn}}
+      <div class="btn-group pull-right dropdown">
+        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+          <span class="caret"></span>
+          Account
+        </a>
+        <ul class="dropdown-menu"  role="menu" aria-labelledby="dropdownMenu">
+          <li>{{#linkTo "user" tabindex="-1"}}Profile{{/linkTo}}</li>
+        </ul>
+      </div>
         <div class="btn-group pull-right">
         {{#linkTo "servers.new" class="btn"}}<i class="icon-plus-sign"></i>Add New Server{{/linkTo}}
         <a class="btn" {{action syncServers}}><i class="icon-plus-sign"></i> Sync Servers</a>

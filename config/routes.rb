@@ -4,8 +4,10 @@ KnifeWebTest::Application.routes.draw do
     passwords: "users/passwords",
     sessions: 'sessions'
   }
-  resources :servers
+
+  resources :users
   resources :knife_configs
+  resources :servers
 match '/sync' => 'application#sync', :via => :get
   root :to => 'application#index'
 end
